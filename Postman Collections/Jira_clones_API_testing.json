@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "71a0b227-d838-4db0-a889-940c9899f64b",
-		"name": "jira_clone",
+		"name": "Andress_Raev_jira_clone",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
@@ -2379,7 +2379,7 @@
 	],
 	"variable": [
 		{
-			"id": "f0d3ee14-d4e6-4aa6-bec5-538e6742ed87",
+			"id": "1add7448-eaa6-41ee-adb7-7bb9c24e9191",
 			"key": "base_url",
 			"value": "https://jira-api.ivorreic.com",
 			"type": "string"
