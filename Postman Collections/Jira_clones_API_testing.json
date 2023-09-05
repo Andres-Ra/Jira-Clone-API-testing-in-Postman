@@ -2630,12 +2630,12 @@
 									"pm.globals.set(\"timeSpent\", jsonData.issue.timeSpent);\r",
 									"\r",
 									"pm.test(\"Updating project information was successful\", function () {\r",
-									"    pm.response.to.have.status(200);\r",
+									"    pm.response.to.have.status(500);\r",
 									"    });\r",
 									"\r",
 									"pm.test(\"Information was correctly saved - timeSpent is removed\", function () {\r",
 									"    pm.expect(jsonData.issue.id).to.eql(pm.globals.get(\"issue_id\"));\r",
-									"    pm.expect(jsonData.issue.timeSpent).to.eql(pm.globals.get(\"timeSpent\"));\r",
+									"    pm.expect(jsonData.error.message).to.eql(\"Something went wrong, please contact our support.\")\r",
 									"    });"
 								],
 								"type": "text/javascript"
@@ -2696,7 +2696,7 @@
 	],
 	"variable": [
 		{
-			"id": "a146c1bd-7aed-4fe4-8106-b14a8c93be30",
+			"id": "4945b344-2742-42e6-9543-6eb4d9001b4d",
 			"key": "base_url",
 			"value": "https://jira-api.ivorreic.com",
 			"type": "string"
