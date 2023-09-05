@@ -2924,7 +2924,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"estimate\": -2147483647\r\n}",
+							"raw": "{\r\n    \"estimate\": -2147483648\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3013,7 +3013,7 @@
 	],
 	"variable": [
 		{
-			"id": "d14d7a3d-bb69-42a8-b519-20869bec796a",
+			"id": "ab368514-8b34-4472-9003-439a60f8a331",
 			"key": "base_url",
 			"value": "https://jira-api.ivorreic.com",
 			"type": "string"
