@@ -2429,7 +2429,7 @@
 									"    //updatedAt date should be modified\r",
 									"    pm.expect(jsonData.issue.updatedAt).not.eql(pm.globals.get('updatedAt'));\r",
 									"    //timeSpent is updated (same as saved in global variable)\r",
-									"    pm.expect(jsonData.issue.timeSpent).to.be(pm.globals.get('timeSpent'));\r",
+									"    pm.expect(jsonData.issue.timeSpent).to.contain(pm.globals.get('timeSpent'));\r",
 									"    });"
 								],
 								"type": "text/javascript"
@@ -2528,7 +2528,7 @@
 	],
 	"variable": [
 		{
-			"id": "968a8216-6157-428a-9539-f1422c3fcaac",
+			"id": "9199adf8-db61-4edd-b5bf-d1f9f2415505",
 			"key": "base_url",
 			"value": "https://jira-api.ivorreic.com",
 			"type": "string"
