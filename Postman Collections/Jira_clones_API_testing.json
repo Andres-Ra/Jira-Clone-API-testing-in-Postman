@@ -2465,6 +2465,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "56e7d90a-1e54-4205-a80f-93920edb2c3f",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"\r",
@@ -2475,14 +2476,13 @@
 									"pm.test(\"Information was correctly retireved\", function () {\r",
 									"    pm.expect(jsonData.project.id).to.eql(pm.globals.get(\"project_id\"));\r",
 									"    //number of users is the same\r",
-									"    pm.expect(jsonData.project.users.length).to.eql(pm.globals.get(\"totalNumberOfUsers\"));\r",
+									"    pm.expect(jsonData.project.timeSpent).to.eql(pm.globals.get(\"timeSpent\"));\r",
 									"    //similar validation for number of issues can be added\r",
 									"});\r",
 									"\r",
 									""
 								],
-								"type": "text/javascript",
-								"id": "56e7d90a-1e54-4205-a80f-93920edb2c3f"
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -2531,7 +2531,7 @@
 	],
 	"variable": [
 		{
-			"id": "6bdbf478-897e-4baa-af24-004fabf9adc3",
+			"id": "259a0ec6-165d-4d50-a546-fec3c09bd987",
 			"key": "base_url",
 			"value": "https://jira-api.ivorreic.com",
 			"type": "string"
