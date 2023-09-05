@@ -2536,6 +2536,43 @@
 						"url": "{{base_url}}/issues/{{issue_id}}"
 					},
 					"response": []
+				},
+				{
+					"name": "Get project (timeSpent is removed)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "56e7d90a-1e54-4205-a80f-93920edb2c3f",
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Issue creation was successful\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Information was correctly retireved\", function () {       \r",
+									"    pm.expect(jsonData.issue.title).to.eql(pm.globals.get('title')); \r",
+									"    pm.expect(jsonData.issue.id).to.eql(pm.globals.get('issue_id'));\r",
+									"    pm.expect(jsonData.issue.timeSpent).to.eql(pm.globals.get(\"timeSpent\"));\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "7b1c971d-d420-4e1a-8886-beeaa979cde0",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{base_url}}/issues/{{issue_id}}"
+					},
+					"response": []
 				}
 			],
 			"id": "224cf356-5e6f-4d99-9afb-f27cdd8c3254"
@@ -2571,7 +2608,7 @@
 	],
 	"variable": [
 		{
-			"id": "05ccfa56-6267-403c-8099-f23aaee9f76e",
+			"id": "94c88c4c-cf5c-4e87-8ae1-c5ba3fbdbfb7",
 			"key": "base_url",
 			"value": "https://jira-api.ivorreic.com",
 			"type": "string"
