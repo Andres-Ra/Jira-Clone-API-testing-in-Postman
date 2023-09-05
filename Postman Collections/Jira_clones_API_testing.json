@@ -2350,7 +2350,80 @@
 		},
 		{
 			"name": "Time tracking: time spent",
-			"item": [],
+			"item": [
+				{
+					"name": "Create issue (prerequisite)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1526515b-2c65-451e-aa1f-eb113887f55d",
+								"exec": [
+									"//save received response to current test variable\r",
+									"var jsonData = pm.response.json();\r",
+									"\r",
+									"//save certain value from JSON to globals  variable\r",
+									"pm.globals.set(\"issue_id\", jsonData.issue.id);\r",
+									"\r",
+									"pm.test(\"Issue creation was successful\", function () {\r",
+									"    pm.response.to.not.be.error;\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check that information was saved correctly\", function () {\r",
+									"    pm.expect(jsonData.issue.title).to.eql(\"Issue title\");\r",
+									"    pm.expect(jsonData.issue.type).to.eql(\"task\");\r",
+									"    pm.expect(jsonData.issue.description).to.eql(\"Issue description\");\r",
+									"    pm.expect(jsonData.issue.priority).to.eql(\"3\");\r",
+									"    pm.expect(jsonData.issue.status).to.eql(\"backlog\");\r",
+									"    pm.expect(jsonData.issue.createdAt).to.not.be.null;\r",
+									"    pm.expect(jsonData.issue.updatedAt).to.not.be.null;\r",
+									"\r",
+									"    //WORKSHOP#27 - add more validations!!\r",
+									"\r",
+									"    //example, how to assert value from the list\r",
+									"    pm.expect(jsonData.issue.users[0].id).to.eql(104);\r",
+									"\r",
+									"    //example, how to assert null\r",
+									"    //next 2 lines do exactly the same\r",
+									"    pm.expect(jsonData.issue.estimate).to.eql(null);\r",
+									"    pm.expect(jsonData.issue.estimate).to.be.null;\r",
+									"\r",
+									"    //Output to console if needed\r",
+									"    console.log(\"Test was passed\");\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "e467e36d-f6a9-4b69-910d-32fa63b1e7c6",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsImlhdCI6MTY2MTg4ODg2NSwiZXhwIjoxNjc3NDQwODY1fQ.xBCXkyIvbEe6yW1l079gPqZjt0indGDLBvyUG9n_0es"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"task\",\r\n    \"title\": \"Issue title\",\r\n    \"description\": \"Issue description\",\r\n    \"reporterId\": 104,\r\n    \"priority\": \"3\",\r\n    \"status\": \"backlog\",\r\n    \"projectId\": 35,\r\n    \"users\": [\r\n        {\r\n            \"id\": 104\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/issues"
+					},
+					"response": []
+				}
+			],
 			"id": "224cf356-5e6f-4d99-9afb-f27cdd8c3254"
 		}
 	],
@@ -2384,7 +2457,7 @@
 	],
 	"variable": [
 		{
-			"id": "6ef15cb1-32a7-4446-95c5-3aed7545633d",
+			"id": "e065c2ef-b6a2-430f-a682-9f9cec69391a",
 			"key": "base_url",
 			"value": "https://jira-api.ivorreic.com",
 			"type": "string"
