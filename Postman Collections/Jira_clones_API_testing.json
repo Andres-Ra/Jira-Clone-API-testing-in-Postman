@@ -2422,7 +2422,7 @@
 									"\r",
 									"pm.test(\"Updating project information was successful\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
-									"});\r",
+									"    });\r",
 									"\r",
 									"pm.test(\"Information was correctly saved\", function () {\r",
 									"    pm.expect(jsonData.issue.id).to.eql(pm.globals.get(\"issue_id\"));\r",
@@ -2528,7 +2528,7 @@
 	],
 	"variable": [
 		{
-			"id": "4c769de2-f3ed-402e-8165-aae88408b7de",
+			"id": "fe0a0c74-d291-4c4c-8946-8ff4fb50915a",
 			"key": "base_url",
 			"value": "https://jira-api.ivorreic.com",
 			"type": "string"
