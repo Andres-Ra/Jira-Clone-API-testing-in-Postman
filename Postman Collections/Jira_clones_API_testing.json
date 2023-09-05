@@ -2826,8 +2826,8 @@
 									"    });\r",
 									"\r",
 									"pm.test(\"Information was correctly saved - timeSpent is removed\", function () {\r",
-									"    pm.expect(jsonData.issue.id).to.eql(pm.globals.get(\"issue_id\"));\r",
-									"    pm.expect(jsonData.issue.timeSpent).to.eql(pm.globals.get(\"timeSpent\"));\r",
+									"    pm.expect(jsonData.issue.id).to.eql(pm.globals.get('issue_id'));\r",
+									"    pm.expect(jsonData.issue.estimate).to.eql(pm.globals.get('estimate'));\r",
 									"    });"
 								],
 								"type": "text/javascript"
@@ -3013,7 +3013,7 @@
 	],
 	"variable": [
 		{
-			"id": "3e794f27-7d1e-4b11-a49f-2ac4f1a9cf00",
+			"id": "af528590-b51e-43d1-b82e-bb4dc41f8f4d",
 			"key": "base_url",
 			"value": "https://jira-api.ivorreic.com",
 			"type": "string"
