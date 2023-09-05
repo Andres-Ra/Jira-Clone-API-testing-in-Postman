@@ -2575,7 +2575,7 @@
 					"response": []
 				},
 				{
-					"name": "Log timeSpent (maximum value)",
+					"name": "Log timeSpent (maximum allowed value)",
 					"event": [
 						{
 							"listen": "test",
@@ -2696,7 +2696,7 @@
 	],
 	"variable": [
 		{
-			"id": "3c233908-8ff9-4255-8b8c-f63db271f681",
+			"id": "fbcd640f-2b21-453c-ac83-0922a38c37fa",
 			"key": "base_url",
 			"value": "https://jira-api.ivorreic.com",
 			"type": "string"
