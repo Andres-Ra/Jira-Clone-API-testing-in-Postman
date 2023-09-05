@@ -2735,7 +2735,7 @@
 								"id": "6d077d8d-ed31-49a5-a36f-0c6af85aea64",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
-									"pm.globals.set('estimate', jsonData.issue.timeSpent);\r",
+									"pm.globals.set('estimate', jsonData.issue.estimate);\r",
 									"\r",
 									"pm.test(\"Updating project information was successful\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
@@ -3013,7 +3013,7 @@
 	],
 	"variable": [
 		{
-			"id": "072cba9e-c848-4c8d-b731-734257c4fd64",
+			"id": "0c341466-9220-46dc-aa83-6366917b8c83",
 			"key": "base_url",
 			"value": "https://jira-api.ivorreic.com",
 			"type": "string"
