@@ -2490,7 +2490,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "{{base_url}}/project"
+						"url": "{{base_url}}/issues/{{issue_id}}"
 					},
 					"response": []
 				}
@@ -2528,7 +2528,7 @@
 	],
 	"variable": [
 		{
-			"id": "fe0a0c74-d291-4c4c-8946-8ff4fb50915a",
+			"id": "f00a3411-b3ad-4654-a311-18a6c76ddd18",
 			"key": "base_url",
 			"value": "https://jira-api.ivorreic.com",
 			"type": "string"
