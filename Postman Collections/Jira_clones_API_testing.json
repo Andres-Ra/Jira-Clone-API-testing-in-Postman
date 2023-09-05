@@ -2774,7 +2774,7 @@
 					"response": []
 				},
 				{
-					"name": "Get project (timeSpent is modified)",
+					"name": "Get project (estimate is modified)",
 					"event": [
 						{
 							"listen": "test",
@@ -3013,7 +3013,7 @@
 	],
 	"variable": [
 		{
-			"id": "be9c5ef6-a29f-40f2-ac76-0abef8317377",
+			"id": "980df491-1034-414f-92eb-b7f62596024b",
 			"key": "base_url",
 			"value": "https://jira-api.ivorreic.com",
 			"type": "string"
