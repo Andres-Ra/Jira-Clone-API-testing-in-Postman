@@ -2628,16 +2628,15 @@
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"\r",
-									"pm.test('Updating project was un-successful (Internal server error 500)', function () {\r",
-									"    pm.response.to.have.status(500);\r",
-									"})\r",
-									"\r",
-									"pm.test(\"Correct error message is retrieved\", function () {\r",
-									"    pm.expect(jsonData.error.message).to.eql(\"Something went wrong, please contact our support.\");\r",
-									"    pm.expect(jsonData.error.code).to.eql(\"INTERNAL_ERROR\");\r",
+									"pm.test(\"Correct error code is returned\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
 									"});\r",
 									"\r",
-									""
+									"pm.test(\"Error message regarding title is presented in the block\", function () {\r",
+									"    pm.expect(jsonData.error.code).to.eql(\"BAD_USER_INPUT\");\r",
+									"    pm.expect(jsonData.error.message).to.eql(\"There were validation errors.\");\r",
+									"    pm.expect(jsonData.error.data.fields.timeSpent).to.eql(\"Must be a value\");\r",
+									"});"
 								],
 								"type": "text/javascript"
 							}
@@ -2697,7 +2696,7 @@
 	],
 	"variable": [
 		{
-			"id": "fae222f9-99f2-432a-b3c3-b5bf8a018411",
+			"id": "2c03ae9d-b5d1-4e89-8916-67f544c008a7",
 			"key": "base_url",
 			"value": "https://jira-api.ivorreic.com",
 			"type": "string"
