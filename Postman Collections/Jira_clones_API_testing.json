@@ -2811,7 +2811,7 @@
 					"response": []
 				},
 				{
-					"name": "Remove timeSpent",
+					"name": "Remove estimated time",
 					"event": [
 						{
 							"listen": "test",
@@ -3013,7 +3013,7 @@
 	],
 	"variable": [
 		{
-			"id": "5a5199a4-2078-412a-8d1d-814f203ed0ca",
+			"id": "9278c38a-7942-459a-a559-d4ffb846e9f1",
 			"key": "base_url",
 			"value": "https://jira-api.ivorreic.com",
 			"type": "string"
