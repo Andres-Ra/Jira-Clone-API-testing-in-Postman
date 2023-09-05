@@ -2619,6 +2619,43 @@
 					"response": []
 				},
 				{
+					"name": "Get project (timeSpent is removed) Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "56e7d90a-1e54-4205-a80f-93920edb2c3f",
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Issue creation was successful\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Information was correctly retireved\", function () {       \r",
+									"    pm.expect(jsonData.issue.title).to.eql(pm.globals.get('title')); \r",
+									"    pm.expect(jsonData.issue.id).to.eql(pm.globals.get('issue_id'));\r",
+									"    pm.expect(jsonData.issue.timeSpent).to.eql(pm.globals.get(\"timeSpent\"));\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "c52973b0-246f-4dd8-b290-488a6a14f8a1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{base_url}}/issues/{{issue_id}}"
+					},
+					"response": []
+				},
+				{
 					"name": "Log timeSpent (random verb)",
 					"event": [
 						{
@@ -3013,7 +3050,7 @@
 	],
 	"variable": [
 		{
-			"id": "15aacd5f-f37b-4012-8a92-9e5ffa41add6",
+			"id": "43ad9925-150f-418a-bc5f-e1f0dff4b90b",
 			"key": "base_url",
 			"value": "https://jira-api.ivorreic.com",
 			"type": "string"
