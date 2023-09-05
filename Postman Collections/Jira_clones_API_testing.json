@@ -2619,7 +2619,7 @@
 					"response": []
 				},
 				{
-					"name": "Random charachter timeSpent",
+					"name": "Log timeSpent (random character)",
 					"event": [
 						{
 							"listen": "test",
@@ -2696,7 +2696,7 @@
 	],
 	"variable": [
 		{
-			"id": "d131adcb-8a69-4b9e-b509-9257805e9bc2",
+			"id": "312f8711-d048-4b46-af95-f160e317dd5d",
 			"key": "base_url",
 			"value": "https://jira-api.ivorreic.com",
 			"type": "string"
