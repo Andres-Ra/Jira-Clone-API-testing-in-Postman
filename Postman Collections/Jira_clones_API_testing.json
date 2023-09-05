@@ -2607,7 +2607,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"timeSpent\": 2147483647 // from Frontend JS code\r\n}",
+							"raw": "{\r\n    \"timeSpent\": 2147483647 // from JavaScript code\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3087,7 +3087,7 @@
 	],
 	"variable": [
 		{
-			"id": "89318f5b-5f27-4918-93d8-b3992e70f645",
+			"id": "112d38f0-a972-45a6-85cd-e8423fd40e52",
 			"key": "base_url",
 			"value": "https://jira-api.ivorreic.com",
 			"type": "string"
