@@ -2420,18 +2420,17 @@
 									"var jsonData = pm.response.json();\r",
 									"pm.globals.set(\"timeSpent\", jsonData.issue.timeSpent);\r",
 									"\r",
+									"pm.test(\"Updating project information was successful\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
 									"pm.test(\"Information was correctly saved\", function () {\r",
 									"    pm.expect(jsonData.issue.id).to.eql(pm.globals.get(\"issue_id\"));\r",
 									"    //updatedAt date should be modified\r",
 									"    pm.expect(jsonData.issue.updatedAt).not.eql(pm.globals.get('updatedAt'));\r",
 									"    //more validations can be added for asserting name, url, description and category\r",
 									"    pm.expect(jsonData.issue.timeSpent).to.eql(pm.globals.get('timeSpent')); // Description from  saved global variable\r",
-									"    });\r",
-									"\r",
-									"pm.test(\"Updating project information was successful\", function () {\r",
-									"    pm.response.to.have.status(200);\r",
-									"});\r",
-									""
+									"    });"
 								],
 								"type": "text/javascript"
 							}
@@ -2529,7 +2528,7 @@
 	],
 	"variable": [
 		{
-			"id": "f571ef14-2c87-4018-a067-5a7a681e106b",
+			"id": "429eda8f-83c6-42ba-97d3-c2632501fd58",
 			"key": "base_url",
 			"value": "https://jira-api.ivorreic.com",
 			"type": "string"
