@@ -2473,7 +2473,7 @@
 									"pm.test(\"Information was correctly retireved\", function () {\r",
 									"    pm.expect(jsonData.issue.id).to.eql(pm.globals.get(\"issue_id\"));\r",
 									"    //number of users is the same\r",
-									"    pm.expect(jsonData.issue.timeSpent).to.eql(pm.globals.get('timeSpent'));\r",
+									"    pm.expect(jsonData.issue.timeSpent).to.eql(pm.globals.get(\"timeSpent\"));\r",
 									"    //similar validation for number of issues can be added\r",
 									"});\r",
 									"\r",
@@ -2528,7 +2528,7 @@
 	],
 	"variable": [
 		{
-			"id": "0c59489f-42a8-4d62-be7e-e3c0a818ae36",
+			"id": "685f8e6a-32c6-4f69-b427-11633257484f",
 			"key": "base_url",
 			"value": "https://jira-api.ivorreic.com",
 			"type": "string"
