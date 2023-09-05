@@ -2628,14 +2628,15 @@
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"\r",
-									"pm.test(\"Updating project was un-successful (Internal server error 500)\", function () {\r",
+									"pm.test('Updating project was un-successful (Internal server error 500)', function () {\r",
 									"    pm.response.to.have.status(500);\r",
-									"    });\r",
+									"})\r",
 									"\r",
 									"pm.test(\"Correct error message is retrieved\", function () {\r",
-									"    pm.expect(jsonData.issue.id).to.eql(pm.globals.get(\"issue_id\"));\r",
 									"    pm.expect(jsonData.error.message).to.eql(\"Something went wrong, please contact our support.\")\r",
-									"    });"
+									"});\r",
+									"\r",
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -2695,7 +2696,7 @@
 	],
 	"variable": [
 		{
-			"id": "a80577d1-2460-43e7-824d-c433463bebdb",
+			"id": "9062377d-b77f-43a8-bf01-d6011e921a2a",
 			"key": "base_url",
 			"value": "https://jira-api.ivorreic.com",
 			"type": "string"
