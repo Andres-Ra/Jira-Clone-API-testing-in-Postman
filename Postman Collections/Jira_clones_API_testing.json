@@ -2619,7 +2619,7 @@
 					"response": []
 				},
 				{
-					"name": "Get project (timeSpent is removed) Copy",
+					"name": "Get project (timeSpent is maxallowedvalue)",
 					"event": [
 						{
 							"listen": "test",
@@ -3050,7 +3050,7 @@
 	],
 	"variable": [
 		{
-			"id": "43ad9925-150f-418a-bc5f-e1f0dff4b90b",
+			"id": "0cb7b7fe-31a0-400c-8a4d-5eab940b2dae",
 			"key": "base_url",
 			"value": "https://jira-api.ivorreic.com",
 			"type": "string"
