@@ -2952,7 +2952,7 @@
 									"pm.test(\"Error message regarding estimate is presented in the block\", function () {\r",
 									"    pm.expect(jsonData.error.code).to.eql(\"BAD_USER_INPUT\");\r",
 									"    pm.expect(jsonData.error.message).to.eql(\"There were validation errors.\");\r",
-									"    pm.expect(jsonData.error.data.fields.estimate).to.eql(\"Estimated time must be a value between 0 and 2147483647\");\r",
+									"    pm.expect(jsonData.error.data.fields.estimate).to.eql(\"Estimated time must be a value\");\r",
 									"});"
 								],
 								"type": "text/javascript"
@@ -3013,7 +3013,7 @@
 	],
 	"variable": [
 		{
-			"id": "9f10ca6f-7ddf-4869-8b31-3b9e26395ed9",
+			"id": "b3056e81-555c-4ebd-97b1-048bbf1de50f",
 			"key": "base_url",
 			"value": "https://jira-api.ivorreic.com",
 			"type": "string"
