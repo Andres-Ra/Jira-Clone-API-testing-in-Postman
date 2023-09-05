@@ -2936,7 +2936,7 @@
 					"response": []
 				},
 				{
-					"name": "Log timeSpent (random verb)",
+					"name": "Log estimated time (random verb)",
 					"event": [
 						{
 							"listen": "test",
@@ -3013,7 +3013,7 @@
 	],
 	"variable": [
 		{
-			"id": "b0b20487-e81f-4403-a54f-5a84f3981714",
+			"id": "36fdf9b5-f3ec-4a10-9b0b-7c79661422d4",
 			"key": "base_url",
 			"value": "https://jira-api.ivorreic.com",
 			"type": "string"
