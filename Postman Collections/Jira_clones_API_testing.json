@@ -2628,7 +2628,7 @@
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"\r",
-									"pm.test(\"Updating project information was successful\", function () {\r",
+									"pm.test(\"Updating project was un-successful (Internal server error 500)\", function () {\r",
 									"    pm.response.to.have.status(500);\r",
 									"    });\r",
 									"\r",
@@ -2695,7 +2695,7 @@
 	],
 	"variable": [
 		{
-			"id": "76bbda16-bb37-407a-b89c-15e5c47e924f",
+			"id": "459fc69a-5176-4252-91f2-24d1b3c1a5cc",
 			"key": "base_url",
 			"value": "https://jira-api.ivorreic.com",
 			"type": "string"
