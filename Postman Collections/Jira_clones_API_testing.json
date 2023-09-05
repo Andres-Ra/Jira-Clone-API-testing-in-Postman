@@ -2421,7 +2421,7 @@
 									"pm.globals.set(\"timeSpent\", jsonData.issue.timeSpent);\r",
 									"\r",
 									"pm.test(\"Information was correctly saved\", function () {\r",
-									"    pm.expect(jsonData.issue.id).to.eql(pm.globals.get(\"project_id\"));\r",
+									"    pm.expect(jsonData.issue.id).to.eql(pm.globals.get(\"issue_id\"));\r",
 									"    //createdAt date should not change\r",
 									"    pm.expect(jsonData.issue.createdAt).to.eql(pm.globals.get('createdAt'));\r",
 									"    //updatedAt date should be modified\r",
@@ -2531,7 +2531,7 @@
 	],
 	"variable": [
 		{
-			"id": "f4c7ee62-ba07-49f7-b53d-d9a8869c4276",
+			"id": "8092f6c1-f08a-4d4d-aedb-54aa7d60e05f",
 			"key": "base_url",
 			"value": "https://jira-api.ivorreic.com",
 			"type": "string"
