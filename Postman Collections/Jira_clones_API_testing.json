@@ -2448,7 +2448,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"timeSpent\": \"1000\"\r\n}",
+							"raw": "{\r\n    \"timeSpent\": \"singularity 1.3\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2493,7 +2493,7 @@
 	],
 	"variable": [
 		{
-			"id": "50ef67b9-ede2-40a3-a9b4-ca8515358fc4",
+			"id": "cc28ecc5-9cff-402b-ae25-aa8a3b098ef0",
 			"key": "base_url",
 			"value": "https://jira-api.ivorreic.com",
 			"type": "string"
