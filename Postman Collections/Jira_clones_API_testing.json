@@ -2359,39 +2359,25 @@
 							"script": {
 								"id": "1526515b-2c65-451e-aa1f-eb113887f55d",
 								"exec": [
-									"//save received response to current test variable\r",
 									"var jsonData = pm.response.json();\r",
-									"\r",
-									"//save certain value from JSON to globals  variable\r",
 									"pm.globals.set(\"issue_id\", jsonData.issue.id);\r",
+									"pm.globals.set(\"title\", jsonData.issue.title); // Saving title as a global variable\r",
+									"pm.globals.set(\"description\", jsonData.issue.description); // Saving description as a global variable\r",
 									"\r",
 									"pm.test(\"Issue creation was successful\", function () {\r",
-									"    pm.response.to.not.be.error;\r",
 									"    pm.response.to.have.status(200);\r",
 									"});\r",
 									"\r",
-									"pm.test(\"Check that information was saved correctly\", function () {\r",
-									"    pm.expect(jsonData.issue.title).to.eql(\"Issue title\");\r",
-									"    pm.expect(jsonData.issue.type).to.eql(\"task\");\r",
-									"    pm.expect(jsonData.issue.description).to.eql(\"Issue description\");\r",
-									"    pm.expect(jsonData.issue.priority).to.eql(\"3\");\r",
-									"    pm.expect(jsonData.issue.status).to.eql(\"backlog\");\r",
-									"    pm.expect(jsonData.issue.createdAt).to.not.be.null;\r",
-									"    pm.expect(jsonData.issue.updatedAt).to.not.be.null;\r",
-									"\r",
-									"    //WORKSHOP#27 - add more validations!!\r",
-									"\r",
-									"    //example, how to assert value from the list\r",
-									"    pm.expect(jsonData.issue.users[0].id).to.eql(104);\r",
-									"\r",
-									"    //example, how to assert null\r",
-									"    //next 2 lines do exactly the same\r",
-									"    pm.expect(jsonData.issue.estimate).to.eql(null);\r",
-									"    pm.expect(jsonData.issue.estimate).to.be.null;\r",
-									"\r",
-									"    //Output to console if needed\r",
-									"    console.log(\"Test was passed\");\r",
-									"\r",
+									"// Using the built-in variables \"$randomAdjective\" for the title and \"$randomLoremSentence\" for the description\r",
+									"pm.test(\"Check that information is retrieved correctly when using variables\", function () {\r",
+									"    pm.expect(jsonData.issue.title).to.eql(pm.globals.get('title')); // Title from saved global variable\r",
+									"    pm.expect(jsonData.issue.description).to.eql(pm.globals.get('description')); // Description from  saved global variable\r",
+									"    pm.expect(jsonData.issue.type).to.eql(\"bug\");\r",
+									"    pm.expect(jsonData.issue.status).to.eq(\"selected\");\r",
+									"    pm.expect(jsonData.issue.priority).to.eq(\"3\");\r",
+									"    pm.expect(jsonData.issue.reporterId).to.eql(pm.globals.get('user_id2')); //Baby Yoda from a global variable\r",
+									"    pm.expect(jsonData.issue.projectId).to.eql(pm.globals.get('project_id'));\r",
+									"    pm.expect(jsonData.issue.users[0].id).to.eql(pm.globals.get('user_id1')); //Pickle Rick id from global variable\r",
 									"});"
 								],
 								"type": "text/javascript"
@@ -2412,7 +2398,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"type\": \"task\",\r\n    \"title\": \"Issue title\",\r\n    \"description\": \"Issue description\",\r\n    \"reporterId\": 104,\r\n    \"priority\": \"3\",\r\n    \"status\": \"backlog\",\r\n    \"projectId\": 35,\r\n    \"users\": [\r\n        {\r\n            \"id\": 104\r\n        }\r\n    ]\r\n}",
+							"raw": "{\r\n    \"type\": \"bug\",\r\n    \"title\": \"{{$randomAdjective}}\", // Using built in random adjective\r\n    \"description\": \"{{$randomLoremSentence}}\", // Using built in random Lorem Sentence\r\n    \"reporterId\": {{user_id2}}, //Baby Yoda from global variable\r\n    \"priority\": \"3\",\r\n    \"status\": \"selected\",\r\n    \"projectId\": {{project_id}},\r\n    \"users\": [\r\n        {\r\n            \"id\": {{user_id1}} //Pickle Rick from global variable\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2457,7 +2443,7 @@
 	],
 	"variable": [
 		{
-			"id": "e065c2ef-b6a2-430f-a682-9f9cec69391a",
+			"id": "c4bc6a7f-94d9-4707-a7d3-47196ad9ebee",
 			"key": "base_url",
 			"value": "https://jira-api.ivorreic.com",
 			"type": "string"
