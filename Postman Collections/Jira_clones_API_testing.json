@@ -2455,7 +2455,7 @@
 								}
 							}
 						},
-						"url": "{{base_url}}/project"
+						"url": "{{base_url}}/issues/{{issue_id}}"
 					},
 					"response": []
 				},
@@ -2531,7 +2531,7 @@
 	],
 	"variable": [
 		{
-			"id": "c6310d3e-d807-4841-bb9e-d37159ab49b7",
+			"id": "f0e0a385-3cc9-4699-8d3c-67b4d3229c8f",
 			"key": "base_url",
 			"value": "https://jira-api.ivorreic.com",
 			"type": "string"
