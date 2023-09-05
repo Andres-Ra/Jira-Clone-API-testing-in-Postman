@@ -2510,7 +2510,6 @@
 									"\r",
 									"pm.test(\"Information was correctly saved\", function () {\r",
 									"    pm.expect(jsonData.issue.id).to.eql(pm.globals.get(\"issue_id\"));\r",
-									"\r",
 									"    pm.expect(jsonData.issue.timeSpent).to.eql(pm.globals.get(\"timeSpent\"));\r",
 									"    });"
 								],
@@ -2572,7 +2571,7 @@
 	],
 	"variable": [
 		{
-			"id": "9971a6a4-0dff-4961-b904-2093e42008f6",
+			"id": "b926734f-f4e1-45c0-ab17-e151520abd31",
 			"key": "base_url",
 			"value": "https://jira-api.ivorreic.com",
 			"type": "string"
