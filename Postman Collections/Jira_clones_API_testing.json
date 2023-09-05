@@ -2410,7 +2410,7 @@
 					"response": []
 				},
 				{
-					"name": "Add timeSpent",
+					"name": "Log timeSpent",
 					"event": [
 						{
 							"listen": "test",
@@ -2493,7 +2493,7 @@
 	],
 	"variable": [
 		{
-			"id": "5ef74b84-7470-49ed-931f-cff0f3ec7889",
+			"id": "7bec960d-077b-4fe9-8ccc-1cc85855338b",
 			"key": "base_url",
 			"value": "https://jira-api.ivorreic.com",
 			"type": "string"
