@@ -2906,7 +2906,7 @@
 									"    pm.response.to.have.status(200);\r",
 									"    });\r",
 									"\r",
-									"pm.test(\"Information was correctly saved - timeSpent is removed\", function () {\r",
+									"pm.test(\"Information was correctly saved - maximum allowed value from JS is 2147483648\", function () {\r",
 									"    pm.expect(jsonData.issue.id).to.eql(pm.globals.get('issue_id'));\r",
 									"    pm.expect(jsonData.issue.estimate).to.eql(pm.globals.get('estimate'));\r",
 									"    });"
@@ -3013,7 +3013,7 @@
 	],
 	"variable": [
 		{
-			"id": "aeef087d-6f8a-46f6-b0ae-b7b004539e9a",
+			"id": "c137b501-37d7-4d45-ac5f-6111876db256",
 			"key": "base_url",
 			"value": "https://jira-api.ivorreic.com",
 			"type": "string"
