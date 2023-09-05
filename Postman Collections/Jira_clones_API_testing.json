@@ -2651,7 +2651,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"timeSpent\": {{$randomMonth}}\r\n}",
+							"raw": "{\r\n    \"timeSpent\": pool6\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2696,7 +2696,7 @@
 	],
 	"variable": [
 		{
-			"id": "ee468221-ab64-4b1b-8064-71f1fdec9054",
+			"id": "81eb9084-a504-4710-bbc7-5b2db2cd170c",
 			"key": "base_url",
 			"value": "https://jira-api.ivorreic.com",
 			"type": "string"
