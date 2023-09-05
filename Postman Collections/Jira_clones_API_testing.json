@@ -2427,12 +2427,13 @@
 									"    //updatedAt date should be modified\r",
 									"    pm.expect(jsonData.project.updatedAt).not.eql(pm.globals.get('updatedAt'));\r",
 									"    //more validations can be added for asserting name, url, description and category\r",
-									"    pm.expe\r",
-									"});\r",
+									"    pm.expect(jsonData.issue.timeSpent).to.eql(pm.globals.get('timeSpent')); // Description from  saved global variable\r",
+									"    });\r",
 									"\r",
 									"pm.test(\"Updating project information was successful\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
-									"});"
+									"});\r",
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -2447,7 +2448,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"timeSpent\": \"singularity 1.3\"\r\n}",
+							"raw": "{\r\n    \"timeSpent\": \"1000\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2492,7 +2493,7 @@
 	],
 	"variable": [
 		{
-			"id": "01c2f4b8-43b6-492f-b68a-7376f988b907",
+			"id": "3560122e-fcd4-4d23-9c45-c87f702482c7",
 			"key": "base_url",
 			"value": "https://jira-api.ivorreic.com",
 			"type": "string"
