@@ -2949,7 +2949,7 @@
 									"    pm.response.to.have.status(400);\r",
 									"});\r",
 									"\r",
-									"pm.test(\"Error message regarding timeSpent is presented in the block\", function () {\r",
+									"pm.test(\"Error message regarding estimate is presented in the block\", function () {\r",
 									"    pm.expect(jsonData.error.code).to.eql(\"BAD_USER_INPUT\");\r",
 									"    pm.expect(jsonData.error.message).to.eql(\"There were validation errors.\");\r",
 									"    pm.expect(jsonData.error.data.fields.timeSpent).to.eql(\"Must be a value\");\r",
@@ -3013,7 +3013,7 @@
 	],
 	"variable": [
 		{
-			"id": "a6cb188d-22e3-42dc-972b-a33e91120e6d",
+			"id": "e19bcead-924f-48da-af64-67c6f65fb461",
 			"key": "base_url",
 			"value": "https://jira-api.ivorreic.com",
 			"type": "string"
