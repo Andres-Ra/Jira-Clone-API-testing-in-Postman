@@ -2635,7 +2635,7 @@
 									"pm.test(\"Error message regarding timeSpent is presented in the block\", function () {\r",
 									"    pm.expect(jsonData.error.code).to.eql(\"BAD_USER_INPUT\");\r",
 									"    pm.expect(jsonData.error.message).to.eql(\"There were validation errors.\");\r",
-									"    pm.expect(jsonData.error.data.fields.timeSpent).to.eql(\"Must be a value\");\r",
+									"    pm.expect(jsonData.error.data.fields.timeSpent).to.eql(\"Time spent must be a value between 0 and 2147483647\");\r",
 									"});"
 								],
 								"type": "text/javascript"
@@ -3013,7 +3013,7 @@
 	],
 	"variable": [
 		{
-			"id": "36fdf9b5-f3ec-4a10-9b0b-7c79661422d4",
+			"id": "9c3c8f0a-b58d-42a5-a7db-2061a6aae9d2",
 			"key": "base_url",
 			"value": "https://jira-api.ivorreic.com",
 			"type": "string"
