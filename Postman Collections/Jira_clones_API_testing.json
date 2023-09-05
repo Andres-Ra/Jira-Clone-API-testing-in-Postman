@@ -2347,6 +2347,11 @@
 				}
 			],
 			"id": "5bae21a2-7c6b-48ae-bec4-0070080d4055"
+		},
+		{
+			"name": "New Folder",
+			"item": [],
+			"id": "224cf356-5e6f-4d99-9afb-f27cdd8c3254"
 		}
 	],
 	"auth": {
@@ -2379,7 +2384,7 @@
 	],
 	"variable": [
 		{
-			"id": "7d7efe99-137a-4d4c-b4f6-4129e4ddee8a",
+			"id": "733ffb62-d287-4516-bdca-75127736e6da",
 			"key": "base_url",
 			"value": "https://jira-api.ivorreic.com",
 			"type": "string"
