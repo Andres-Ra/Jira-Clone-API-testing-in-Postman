@@ -2428,8 +2428,8 @@
 									"    pm.expect(jsonData.issue.id).to.eql(pm.globals.get(\"issue_id\"));\r",
 									"    //updatedAt date should be modified\r",
 									"    pm.expect(jsonData.issue.updatedAt).not.eql(pm.globals.get('updatedAt'));\r",
-									"    //more validations can be added for asserting name, url, description and category\r",
-									"    pm.expect(jsonData.issue.timeSpent).to.eql(pm.globals.get('timeSpent')); // Description from  saved global variable\r",
+									"    //timeSpent is updated (same as saved in global variable)\r",
+									"    pm.expect(jsonData.issue.timeSpent).to.eql(pm.globals.get('timeSpent'));\r",
 									"    });"
 								],
 								"type": "text/javascript"
@@ -2528,7 +2528,7 @@
 	],
 	"variable": [
 		{
-			"id": "429eda8f-83c6-42ba-97d3-c2632501fd58",
+			"id": "4c769de2-f3ed-402e-8165-aae88408b7de",
 			"key": "base_url",
 			"value": "https://jira-api.ivorreic.com",
 			"type": "string"
