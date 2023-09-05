@@ -2418,14 +2418,14 @@
 								"id": "6d077d8d-ed31-49a5-a36f-0c6af85aea64",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
-									"pm.globals.set(\"timeSpent\", jsonData.project.timeSpent);\r",
+									"pm.globals.set(\"timeSpent\", jsonData.issue.timeSpent);\r",
 									"\r",
 									"pm.test(\"Information was correctly saved\", function () {\r",
-									"    pm.expect(jsonData.project.id).to.eql(pm.globals.get(\"project_id\"));\r",
+									"    pm.expect(jsonData.issue.id).to.eql(pm.globals.get(\"project_id\"));\r",
 									"    //createdAt date should not change\r",
-									"    pm.expect(jsonData.project.createdAt).to.eql(pm.globals.get('createdAt'));\r",
+									"    pm.expect(jsonData.issue.createdAt).to.eql(pm.globals.get('createdAt'));\r",
 									"    //updatedAt date should be modified\r",
-									"    pm.expect(jsonData.project.updatedAt).not.eql(pm.globals.get('updatedAt'));\r",
+									"    pm.expect(jsonData.issue.updatedAt).not.eql(pm.globals.get('updatedAt'));\r",
 									"    //more validations can be added for asserting name, url, description and category\r",
 									"    pm.expect(jsonData.issue.timeSpent).to.eql(pm.globals.get('timeSpent')); // Description from  saved global variable\r",
 									"    });\r",
@@ -2531,7 +2531,7 @@
 	],
 	"variable": [
 		{
-			"id": "848bc627-65a9-4258-ab39-f69381bec525",
+			"id": "639cd701-e60b-433f-9823-99b724d94028",
 			"key": "base_url",
 			"value": "https://jira-api.ivorreic.com",
 			"type": "string"
