@@ -2508,7 +2508,7 @@
 									"    pm.response.to.have.status(200);\r",
 									"    });\r",
 									"\r",
-									"pm.test(\"Information was correctly saved\", function () {\r",
+									"pm.test(\"Information was correctly saved - timeSpent is removed\", function () {\r",
 									"    pm.expect(jsonData.issue.id).to.eql(pm.globals.get(\"issue_id\"));\r",
 									"    pm.expect(jsonData.issue.timeSpent).to.eql(pm.globals.get(\"timeSpent\"));\r",
 									"    });"
@@ -2571,7 +2571,7 @@
 	],
 	"variable": [
 		{
-			"id": "b926734f-f4e1-45c0-ab17-e151520abd31",
+			"id": "a5b8e34d-46d9-4be4-885e-a57c07c32ffe",
 			"key": "base_url",
 			"value": "https://jira-api.ivorreic.com",
 			"type": "string"
