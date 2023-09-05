@@ -2493,7 +2493,7 @@
 	],
 	"variable": [
 		{
-			"id": "3560122e-fcd4-4d23-9c45-c87f702482c7",
+			"id": "50ef67b9-ede2-40a3-a9b4-ca8515358fc4",
 			"key": "base_url",
 			"value": "https://jira-api.ivorreic.com",
 			"type": "string"
