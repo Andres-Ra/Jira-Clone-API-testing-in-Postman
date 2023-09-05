@@ -2360,7 +2360,7 @@
 								"id": "1526515b-2c65-451e-aa1f-eb113887f55d",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
-									"pm.globals.set(\"issue_id\", jsonData.issue.id);\r",
+									"pm.globals.set(\"issue_id\", jsonData.issue.id); // Savint issue_id as a global variable\r",
 									"pm.globals.set(\"title\", jsonData.issue.title); // Saving title as a global variable\r",
 									"pm.globals.set(\"description\", jsonData.issue.description); // Saving description as a global variable\r",
 									"\r",
@@ -2608,7 +2608,7 @@
 	],
 	"variable": [
 		{
-			"id": "94c88c4c-cf5c-4e87-8ae1-c5ba3fbdbfb7",
+			"id": "28132983-a50b-4f3a-bf01-023d46270682",
 			"key": "base_url",
 			"value": "https://jira-api.ivorreic.com",
 			"type": "string"
