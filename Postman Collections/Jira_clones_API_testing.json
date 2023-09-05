@@ -2473,7 +2473,7 @@
 									"pm.test(\"Information was correctly retireved\", function () {       \r",
 									"    pm.expect(jsonData.issue.title).to.eql(pm.globals.get('title')); \r",
 									"    pm.expect(jsonData.issue.id).to.eql(pm.globals.get('issue_id'));\r",
-									"    pm.expect(jsonData.issue.timeSpent).to.eql(pm.globals.get(\"timeSpent\"));\r",
+									"    pm.expect(jsonData.issue.timeSpent).to.eql(pm.globals.get(\"timeSpent\");\r",
 									"});\r",
 									"\r",
 									""
@@ -2527,7 +2527,7 @@
 	],
 	"variable": [
 		{
-			"id": "31874148-a88d-49f5-acdd-c2733cc13b0b",
+			"id": "a5d90d91-7277-428b-a265-df391773e71b",
 			"key": "base_url",
 			"value": "https://jira-api.ivorreic.com",
 			"type": "string"
