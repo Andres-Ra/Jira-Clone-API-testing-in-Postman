@@ -2407,7 +2407,36 @@
 						},
 						"url": "{{base_url}}/issues"
 					},
-					"response": []
+					"response": [
+						{
+							"id": "97d5366d-9e76-40bd-8963-2788307b00f9",
+							"name": "Create issue (prerequisite)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsImlhdCI6MTY2MTg4ODg2NSwiZXhwIjoxNjc3NDQwODY1fQ.xBCXkyIvbEe6yW1l079gPqZjt0indGDLBvyUG9n_0es"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"type\": \"bug\",\r\n    \"title\": \"{{$randomAdjective}}\", // Using built in random adjective\r\n    \"description\": \"{{$randomLoremSentence}}\", // Using built in random Lorem Sentence\r\n    \"reporterId\": {{user_id2}}, //Baby Yoda from global variable\r\n    \"priority\": \"3\",\r\n    \"status\": \"selected\",\r\n    \"projectId\": {{project_id}},\r\n    \"users\": [\r\n        {\r\n            \"id\": {{user_id1}} //Pickle Rick from global variable\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/issues"
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"responseTime": null,
+							"body": null
+						}
+					]
 				}
 			],
 			"id": "224cf356-5e6f-4d99-9afb-f27cdd8c3254"
@@ -2443,7 +2472,7 @@
 	],
 	"variable": [
 		{
-			"id": "79d341ff-10c4-4c38-8700-33053514df2c",
+			"id": "7546e4a3-0fea-4c3f-aeff-283aad4c0fb1",
 			"key": "base_url",
 			"value": "https://jira-api.ivorreic.com",
 			"type": "string"
