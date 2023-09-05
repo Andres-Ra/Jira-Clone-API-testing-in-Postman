@@ -2448,7 +2448,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"singularity 1.3\",\r\n    \"url\": \"https://www.atlassian.com/software/jira_clone\",\r\n    \"category\": \"software\",\r\n    \"description\": \"Plan, track, and manage your agile and software development projects in Jira. Customize your workflow, collaborate, and release great software. Updated!\"\r\n}",
+							"raw": "{\r\n    \"timeSpent\": \"singularity 1.3\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2493,7 +2493,7 @@
 	],
 	"variable": [
 		{
-			"id": "7bec960d-077b-4fe9-8ccc-1cc85855338b",
+			"id": "ca2010b4-846a-44bc-84fb-ce1bbddac9e6",
 			"key": "base_url",
 			"value": "https://jira-api.ivorreic.com",
 			"type": "string"
