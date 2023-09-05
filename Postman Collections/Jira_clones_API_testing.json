@@ -2727,7 +2727,7 @@
 					"response": []
 				},
 				{
-					"name": "Log estimate",
+					"name": "Log estimated time",
 					"event": [
 						{
 							"listen": "test",
@@ -3013,7 +3013,7 @@
 	],
 	"variable": [
 		{
-			"id": "17d55a71-9fce-4a4b-a732-5a949ff79bc8",
+			"id": "45ff493f-e964-40a0-a0d1-3244f858d1a0",
 			"key": "base_url",
 			"value": "https://jira-api.ivorreic.com",
 			"type": "string"
