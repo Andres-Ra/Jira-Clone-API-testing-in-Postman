@@ -2632,7 +2632,7 @@
 									"    pm.response.to.have.status(500);\r",
 									"    });\r",
 									"\r",
-									"pm.test(\"Correct error message is retrieved, function () {\r",
+									"pm.test(\"Correct error message is retrieved\", function () {\r",
 									"    pm.expect(jsonData.issue.id).to.eql(pm.globals.get(\"issue_id\"));\r",
 									"    pm.expect(jsonData.error.message).to.eql(\"Something went wrong, please contact our support.\")\r",
 									"    });"
@@ -2695,7 +2695,7 @@
 	],
 	"variable": [
 		{
-			"id": "04c43c10-4303-49d0-a054-9b804c492e23",
+			"id": "a80577d1-2460-43e7-824d-c433463bebdb",
 			"key": "base_url",
 			"value": "https://jira-api.ivorreic.com",
 			"type": "string"
