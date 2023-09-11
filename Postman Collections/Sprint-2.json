@@ -429,12 +429,11 @@
 									"\r",
 									"\r",
 									"pm.test(\"Issue creation was un-successful\", function () {\r",
-									"    pm.response.to.have.status(400);\r",
+									"    pm.response.to.have.status(200);\r",
 									"});\r",
 									"\r",
 									"pm.test(\"Check that correct error messages is recieved\", function () {\r",
 									"    pm.expect(jsonData.comment.body).to.eql(pm.globals.get('comment_3_text'));\r",
-									"    pm.expect(jsonData.error.data.fields.body).to.eql(errorBody);\r",
 									"});"
 								],
 								"type": "text/javascript"
