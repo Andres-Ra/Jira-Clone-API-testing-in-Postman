@@ -2,6 +2,7 @@
 	"info": {
 		"_postman_id": "f94a71d7-8d62-498d-be2b-8682fe29f47c",
 		"name": "AndresRaev_jira_clone_comments",
+		"description": "Run Authentication folder before any other folder in order the tests to run and work correctly.\n\nAuth. folder gets",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
@@ -103,35 +104,7 @@
 						"url": "{{base_url}}/currentUser"
 					},
 					"response": []
-				}
-			],
-			"id": "f53761a5-ff3f-442f-9d1f-06506888e49d",
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							""
-						],
-						"id": "eab6b3b2-ede3-4107-9168-ed22fe929ab2"
-					}
 				},
-				{
-					"listen": "test",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							""
-						],
-						"id": "0f0b5c83-8d1d-4e48-a738-49a9fa627dcb"
-					}
-				}
-			]
-		},
-		{
-			"name": "Create Comments",
-			"item": [
 				{
 					"name": "Create an issue (prerequisite)",
 					"event": [
@@ -189,7 +162,35 @@
 						"url": "{{base_url}}/issues"
 					},
 					"response": []
+				}
+			],
+			"id": "f53761a5-ff3f-442f-9d1f-06506888e49d",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						],
+						"id": "eab6b3b2-ede3-4107-9168-ed22fe929ab2"
+					}
 				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						],
+						"id": "0f0b5c83-8d1d-4e48-a738-49a9fa627dcb"
+					}
+				}
+			]
+		},
+		{
+			"name": "Create Comments",
+			"item": [
 				{
 					"name": "Add a comment 1",
 					"event": [
