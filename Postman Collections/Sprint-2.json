@@ -133,6 +133,11 @@
 			"name": "Create Comments",
 			"item": [
 				{
+					"name": "New Folder",
+					"item": [],
+					"id": "781e4c8d-639f-40ce-9bd3-248c1d09ed6c"
+				},
+				{
 					"name": "Create an issue (prerequisite)",
 					"event": [
 						{
