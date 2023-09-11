@@ -477,7 +477,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n}",
+							"raw": "{\r\n    \"body\": null,\r\n    \"userId\": null,\r\n    \"issueId\": null\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
