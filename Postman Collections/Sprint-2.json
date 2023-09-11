@@ -531,7 +531,7 @@
 									"var jsonData = pm.response.json();\r",
 									"pm.globals.set(\"comment_3_updated\", jsonData.comment.body); // Saving comments text as a global variable\r",
 									"\r",
-									"pm.test(\"Comment updating was successful\", function () {\r",
+									"pm.test(\"Comment updating was successful - correct status\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
 									"});\r",
 									"\r",
