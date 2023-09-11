@@ -384,6 +384,7 @@
 									"\r",
 									"pm.test(\"Check that correct error messages is recieved\", function () {\r",
 									"    pm.expect(jsonData.error.message).to.eql(errorMessage);\r",
+									"    pm.expect.(jsonData.error.data.fields.issueID).to.eql(errorBody);\r",
 									"    pm.expect(jsonData.error.data.fields.body).to.eql(errorBody);\r",
 									"});"
 								],
