@@ -367,7 +367,7 @@
 					"response": []
 				},
 				{
-					"name": "Add a comment (missing required fields)",
+					"name": "Add a comment (missing all required fields)",
 					"event": [
 						{
 							"listen": "test",
