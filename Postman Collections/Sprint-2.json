@@ -974,62 +974,6 @@
 						"url": "{{base_url}}/issues/{{issue_id}}"
 					},
 					"response": []
-				},
-				{
-					"name": "Delete already deleted comment",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "1526515b-2c65-451e-aa1f-eb113887f55d",
-								"exec": [
-									"var jsonData = pm.response.json();\r",
-									"\r",
-									"pm.test(\"Correct status is presented\", function () {\r",
-									"    pm.response.to.have.status(200);\r",
-									"});\r",
-									"\r",
-									"pm.test(\"The information is retrieved correctly (comment 4 is not in array and deleted)\", function () {\r",
-									"    pm.expect(_isContains(jsonData.issue.comments, \"id\" , pm.globals.get('comment_4_id'))).to.be.false;\r",
-									"});\r",
-									"\r",
-									"// The function _isContains checks the value and key name for the each object from the array.\r",
-									"\r",
-									"function _isContains(json, keyname, value) {\r",
-									" return Object.keys(json).some(key => {\r",
-									"        return typeof json[key] === 'object' ? \r",
-									"        _isContains(json[key], keyname, value) : key === keyname && json[key] === value;\r",
-									"    });\r",
-									"}"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"id": "ee1330eb-7257-4493-8406-b0b89feec744",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsImlhdCI6MTY2MTg4ODg2NSwiZXhwIjoxNjc3NDQwODY1fQ.xBCXkyIvbEe6yW1l079gPqZjt0indGDLBvyUG9n_0es"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{base_url}}/issues/{{issue_id}}"
-					},
-					"response": []
 				}
 			],
 			"id": "52d4c05a-4842-493b-9d64-6febad9367d0"
