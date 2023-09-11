@@ -613,7 +613,7 @@
 					"response": []
 				},
 				{
-					"name": "Update comment (deleted-comment)",
+					"name": "Update deleted comment",
 					"event": [
 						{
 							"listen": "test",
