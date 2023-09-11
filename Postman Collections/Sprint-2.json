@@ -724,7 +724,7 @@
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"\r",
-									"pm.test(\"Comment was deleted successful\", function () {\r",
+									"pm.test(\"Correct status is presented\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
 									"});\r",
 									"\r",
