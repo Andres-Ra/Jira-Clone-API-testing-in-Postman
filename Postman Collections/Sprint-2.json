@@ -470,7 +470,58 @@
 		},
 		{
 			"name": "Update Comments",
-			"item": [],
+			"item": [
+				{
+					"name": "Add a comment 3",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1526515b-2c65-451e-aa1f-eb113887f55d",
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"pm.globals.set(\"comment_2_text\", jsonData.comment.body); // Saving comments text as a global variable\r",
+									"pm.globals.set(\"comment_2_id\", jsonData.comment.id); // Saving comments id as a global variable\r",
+									"\r",
+									"pm.test(\"Issue creation was successful\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check that information is retrieved correctly\", function () {\r",
+									"    pm.expect(jsonData.comment.id).to.eql(pm.globals.get('comment_2_id'));\r",
+									"    pm.expect(jsonData.comment.body).to.eql(pm.globals.get('comment_2_text')); //\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "f6fb809d-3667-4b1d-81cb-d8fd938a0956",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsImlhdCI6MTY2MTg4ODg2NSwiZXhwIjoxNjc3NDQwODY1fQ.xBCXkyIvbEe6yW1l079gPqZjt0indGDLBvyUG9n_0es"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"body\": \"Add comment 2\",\r\n    \"userId\": {{user_id1}},\r\n    \"issueId\": {{issue_id}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/comments"
+					},
+					"response": []
+				}
+			],
 			"id": "781e4c8d-639f-40ce-9bd3-248c1d09ed6c"
 		}
 	],
