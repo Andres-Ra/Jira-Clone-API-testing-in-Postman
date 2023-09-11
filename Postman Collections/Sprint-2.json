@@ -688,7 +688,7 @@
 					"response": []
 				},
 				{
-					"name": "Update comment (body is null)",
+					"name": "Update comment (all required fields are null)",
 					"event": [
 						{
 							"listen": "test",
