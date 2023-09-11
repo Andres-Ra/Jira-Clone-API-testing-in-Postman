@@ -976,7 +976,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete already deleted comment",
+					"name": "Delete comment (already deleted)",
 					"event": [
 						{
 							"listen": "test",
