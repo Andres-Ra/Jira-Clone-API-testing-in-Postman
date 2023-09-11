@@ -772,6 +772,312 @@
 				}
 			],
 			"id": "781e4c8d-639f-40ce-9bd3-248c1d09ed6c"
+		},
+		{
+			"name": "Delete comments",
+			"item": [
+				{
+					"name": "Add a comment (prerequisite)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1526515b-2c65-451e-aa1f-eb113887f55d",
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"pm.globals.set(\"comment_3_text\", jsonData.comment.body); // Saving comments text as a global variable\r",
+									"pm.globals.set(\"comment_3_id\", jsonData.comment.id); // Saving comments id as a global variable\r",
+									"\r",
+									"pm.test(\"Comment creation was successful\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check that information is retrieved correctly\", function () {\r",
+									"    pm.expect(jsonData.comment.id).to.eql(pm.globals.get('comment_3_id'));\r",
+									"    pm.expect(jsonData.comment.body).to.eql(pm.globals.get('comment_3_text')); //\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "4f0b5889-6bcf-4968-8358-4ecb292a471c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsImlhdCI6MTY2MTg4ODg2NSwiZXhwIjoxNjc3NDQwODY1fQ.xBCXkyIvbEe6yW1l079gPqZjt0indGDLBvyUG9n_0es"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"body\": \"Add comment 3 - updated later\",\r\n    \"userId\": {{user_id1}},\r\n    \"issueId\": {{issue_id}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/comments"
+					},
+					"response": []
+				},
+				{
+					"name": "Update comment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1526515b-2c65-451e-aa1f-eb113887f55d",
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"pm.globals.set(\"comment_3_updated\", jsonData.comment.body); // Saving comments text as a global variable\r",
+									"\r",
+									"pm.test(\"Comment updating was successful - correct status\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check that information is retrieved correctly\", function () {\r",
+									"    pm.expect(jsonData.comment.id).to.eql(pm.globals.get('comment_3_id'));\r",
+									"    pm.expect(jsonData.comment.body).to.eql(pm.globals.get('comment_3_updated')); //\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "91cab897-530d-4e81-ba09-8c8060403c12",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsImlhdCI6MTY2MTg4ODg2NSwiZXhwIjoxNjc3NDQwODY1fQ.xBCXkyIvbEe6yW1l079gPqZjt0indGDLBvyUG9n_0es"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"body\": \"Add comment 3 - added update\",\r\n    \"userId\": {{user_id1}},\r\n    \"issueId\": {{issue_id}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/comments/{{comment_3_id}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Update comment (body is null)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1526515b-2c65-451e-aa1f-eb113887f55d",
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"const errorMessage = \"There were validation errors.\";\r",
+									"const errorCode = \"BAD_USER_INPUT\";\r",
+									"const errorBody = \"This field is required\"\r",
+									"\r",
+									"pm.test(\"Updating comment was unsuccessful - correct status\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check that correct error message is presented\", function () {\r",
+									"    pm.expect(jsonData.error.message).to.eql(errorMessage);\r",
+									"    pm.expect(jsonData.error.code).to.eql(errorCode);\r",
+									"    pm.expect(jsonData.error.data.fields.body).to.eql(errorBody);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "b49f3737-3303-4b92-93be-a75279339db5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsImlhdCI6MTY2MTg4ODg2NSwiZXhwIjoxNjc3NDQwODY1fQ.xBCXkyIvbEe6yW1l079gPqZjt0indGDLBvyUG9n_0es"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"body\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/comments/{{comment_3_id}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete comment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1526515b-2c65-451e-aa1f-eb113887f55d",
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Comment was deleted successfully - correct status\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "2153e984-373d-4a5d-97ee-7174cb360302",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsImlhdCI6MTY2MTg4ODg2NSwiZXhwIjoxNjc3NDQwODY1fQ.xBCXkyIvbEe6yW1l079gPqZjt0indGDLBvyUG9n_0es"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/comments/{{comment_3_id}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Update deleted comment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1526515b-2c65-451e-aa1f-eb113887f55d",
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"const errorMessage = \"Comment not found.\";\r",
+									"const errorCode = \"ENTITY_NOT_FOUND\";\r",
+									"\r",
+									"pm.test(\"Updating comment was unsuccessful - correct status\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check that correct error message is presented\", function () {\r",
+									"    pm.expect(jsonData.error.message).to.eql(errorMessage);\r",
+									"    pm.expect(jsonData.error.code).to.eql(errorCode);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "c693b06a-3d6d-40db-9483-9ffa4b473194",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsImlhdCI6MTY2MTg4ODg2NSwiZXhwIjoxNjc3NDQwODY1fQ.xBCXkyIvbEe6yW1l079gPqZjt0indGDLBvyUG9n_0es"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"body\": \"Add comment 3 - added update\",\r\n    \"userId\": {{user_id1}},\r\n    \"issueId\": {{issue_id}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/comments/{{comment_3_id}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Check that comment is deleted",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1526515b-2c65-451e-aa1f-eb113887f55d",
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Correct status is presented\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"The information is retrieved correctly (comment 3 is not in array and deleted)\", function () {\r",
+									"    pm.expect(_isContains(jsonData.issue.comments, \"id\" , pm.globals.get('comment_3_id'))).to.be.false;\r",
+									"});\r",
+									"\r",
+									"// The function _isContains checks the value and key name for the each object from the array.\r",
+									"\r",
+									"function _isContains(json, keyname, value) {\r",
+									" return Object.keys(json).some(key => {\r",
+									"        return typeof json[key] === 'object' ? \r",
+									"        _isContains(json[key], keyname, value) : key === keyname && json[key] === value;\r",
+									"    });\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "7e4e59f0-afd8-40e3-b282-ec1031bc0004",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsImlhdCI6MTY2MTg4ODg2NSwiZXhwIjoxNjc3NDQwODY1fQ.xBCXkyIvbEe6yW1l079gPqZjt0indGDLBvyUG9n_0es"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/issues/{{issue_id}}"
+					},
+					"response": []
+				}
+			],
+			"id": "52d4c05a-4842-493b-9d64-6febad9367d0"
 		}
 	],
 	"auth": {
