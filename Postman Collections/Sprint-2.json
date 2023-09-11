@@ -677,7 +677,7 @@
 									"});\r",
 									"\r",
 									"pm.test(\"The information is retrieved correctly (comment 3 is deleted)\", function () {\r",
-									"    pm.expect(_isContains(jsonData.issue.comments, \"id\" , pm.globals.get('comment_3_id'))).to.be.true;\r",
+									"    pm.expect(_isContains(jsonData.issue.comments, \"id\" , pm.globals.get('comment_3_id'))).to.be.false;\r",
 									"    pm.expect(_isContains(jsonData.issue.comments, \"body\" , pm.globals.get('comment_3_text'))).to.be.false;\r",
 									"});\r",
 									"\r",
