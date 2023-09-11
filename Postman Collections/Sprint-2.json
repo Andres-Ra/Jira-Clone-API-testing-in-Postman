@@ -915,7 +915,7 @@
 								}
 							}
 						},
-						"url": "{{base_url}}/comments/{{comment_3_id}}"
+						"url": "{{base_url}}/comments/{{comment_4_id}}"
 					},
 					"response": []
 				},
