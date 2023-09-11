@@ -300,7 +300,7 @@
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"\r",
-									"pm.test(\"Issue creation was successful\", function () {\r",
+									"pm.test(\"Comment creation was successful\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
 									"});\r",
 									"\r",
