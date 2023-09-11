@@ -698,7 +698,8 @@
 									"var jsonData = pm.response.json();\r",
 									"const errorMessage = \"There were validation errors.\";\r",
 									"const errorCode = \"BAD_USER_INPUT\";\r",
-									"const errorBody = \"This field is required\"\r",
+									"const errorBody = \"This field is required\";\r",
+									"const errorBodyExist = \"This field is required and must exist in the system\";\r",
 									"\r",
 									"pm.test(\"Comment creation was unsuccessful - correct status\", function () {\r",
 									"    pm.response.to.have.status(400);\r",
@@ -713,11 +714,11 @@
 									"});\r",
 									"\r",
 									"pm.test(\"Check that userId is required field\", function () {\r",
-									"    pm.expect(jsonData.error.data.fields.userId).to.eql(errorBody);\r",
+									"    pm.expect(jsonData.error.data.fields.userId).to.eql(errorBodyExist);\r",
 									"});\r",
 									"\r",
 									"pm.test(\"Check that comment body is required field\", function () {\r",
-									"    pm.expect(jsonData.error.data.fields.body).to.eql(errorBody);\r",
+									"    pm.expect(jsonData.error.data.fields.body).to.eql(errorBodyExist);\r",
 									"});"
 								],
 								"type": "text/javascript"
