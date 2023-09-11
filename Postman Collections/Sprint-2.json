@@ -439,7 +439,7 @@
 									"const errorMessage = \"There were validation errors.\";\r",
 									"const errorBody = \"This field is required\";\r",
 									"\r",
-									"pm.test(\"Comment creation was unsuccessful\", function () {\r",
+									"pm.test(\"Comment creation was unsuccessful - correct status\", function () {\r",
 									"    pm.response.to.have.status(400);\r",
 									"});\r",
 									"\r",
