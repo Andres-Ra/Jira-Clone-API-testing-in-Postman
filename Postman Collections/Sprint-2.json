@@ -1062,18 +1062,23 @@
 							}
 						},
 						"url": {
-							"raw": "{{base_url}}/comments/?={{$randomAlphaNumeric}}",
+							"raw": "{{base_url}}/comments?={{$randomAbbreviation}}",
 							"host": [
 								"{{base_url}}"
 							],
 							"path": [
-								"comments",
-								""
+								"comments"
 							],
 							"query": [
 								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
 									"key": null,
-									"value": "{{$randomAlphaNumeric}}",
+									"value": "{{$randomAbbreviation}}",
 									"type": "text"
 								}
 							]
