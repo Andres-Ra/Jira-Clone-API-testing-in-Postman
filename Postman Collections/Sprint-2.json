@@ -628,9 +628,8 @@
 								"id": "1526515b-2c65-451e-aa1f-eb113887f55d",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
-									"pm.globals.set(\"comment_3_updated\", jsonData.comment.body); // Saving comments text as a global variable\r",
 									"\r",
-									"pm.test(\"Comment updating was successful\", function () {\r",
+									"pm.test(\"Comment was deleted successful\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
 									"});\r",
 									"\r",
@@ -648,7 +647,7 @@
 						"disableBodyPruning": true
 					},
 					"request": {
-						"method": "PUT",
+						"method": "DELETE",
 						"header": [
 							{
 								"key": "Authorization",
@@ -657,7 +656,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"body\": \"Add comment 3 - added update\",\r\n    \"userId\": {{user_id1}},\r\n    \"issueId\": {{issue_id}}\r\n}",
+							"raw": "",
 							"options": {
 								"raw": {
 									"language": "json"
