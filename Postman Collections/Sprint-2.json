@@ -481,6 +481,59 @@
 					"response": []
 				},
 				{
+					"name": "Add a comment (missing issueId)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1526515b-2c65-451e-aa1f-eb113887f55d",
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"const errorMessage = \"There were validation errors.\";\r",
+									"const errorBody = \"This field is required\";\r",
+									"\r",
+									"pm.test(\"Comment creation was unsuccessful\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Correct error message is recieved\", function () {\r",
+									"    pm.expect(jsonData.error.message).to.eql(errorMessage);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check that userId is required field\", function () {\r",
+									"    pm.expect(jsonData.error.data.fields.userId).to.eql(errorBody);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "b9ed94b5-68d4-44f7-badd-f706c3d27c50",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsImlhdCI6MTY2MTg4ODg2NSwiZXhwIjoxNjc3NDQwODY1fQ.xBCXkyIvbEe6yW1l079gPqZjt0indGDLBvyUG9n_0es"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"body\": \"Add comment - missing userId\",\r\n    \"issueId\": {{issue_id}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/comments"
+					},
+					"response": []
+				},
+				{
 					"name": "Add a comment (special characters)",
 					"event": [
 						{
