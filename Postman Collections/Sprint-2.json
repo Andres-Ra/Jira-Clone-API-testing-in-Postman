@@ -252,7 +252,7 @@
 									"pm.globals.set(\"comment_2_text\", jsonData.comment.body); // Saving comments text as a global variable\r",
 									"pm.globals.set(\"comment_2_id\", jsonData.comment.id); // Saving comments id as a global variable\r",
 									"\r",
-									"pm.test(\"Issue creation was successful\", function () {\r",
+									"pm.test(\"Comment creation was successful\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
 									"});\r",
 									"\r",
