@@ -570,7 +570,7 @@
 					"response": []
 				},
 				{
-					"name": "Update comment (req. fields missing)",
+					"name": "Update comment (req. fields are missing)",
 					"event": [
 						{
 							"listen": "test",
