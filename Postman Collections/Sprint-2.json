@@ -851,7 +851,7 @@
 								}
 							}
 						},
-						"url": "{{base_url}}/comments/1608746"
+						"url": "{{base_url}}/comments/{{comment_3_id}}"
 					},
 					"response": []
 				},
