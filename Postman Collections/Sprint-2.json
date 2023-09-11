@@ -417,7 +417,7 @@
 					"response": []
 				},
 				{
-					"name": "Add a comment (random characters)",
+					"name": "Add a comment (special characters)",
 					"event": [
 						{
 							"listen": "test",
