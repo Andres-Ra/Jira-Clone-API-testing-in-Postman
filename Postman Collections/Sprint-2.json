@@ -614,7 +614,7 @@
 								}
 							}
 						},
-						"url": "{{base_url}}/comments/{{comment_3_id}}"
+						"url": "{{base_url}}/comments/9999999"
 					},
 					"response": []
 				}
