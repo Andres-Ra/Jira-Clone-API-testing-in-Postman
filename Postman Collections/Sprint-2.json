@@ -390,7 +390,7 @@
 									"    pm.expect(jsonData.error.data.fields.issueId).to.eql(errorBody);\r",
 									"});\r",
 									"\r",
-									"pm.test(\"Check that correct error messages are recieved - body, issueId and userId are required for comment\", function () {\r",
+									"pm.test(\"Check that userId is required\", function () {\r",
 									"    pm.expect(jsonData.error.data.fields.userId).to.eql(errorBody);\r",
 									"});\r",
 									"\r",
