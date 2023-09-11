@@ -424,11 +424,10 @@
 								"id": "1526515b-2c65-451e-aa1f-eb113887f55d",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
-									"const errorMessage = \"There were validation errors.\";\r",
 									"pm.globals.set(\"comment_3_text\", jsonData.comment.body); // Saving comments text as a global variable\r",
 									"\r",
 									"\r",
-									"pm.test(\"Issue creation was un-successful\", function () {\r",
+									"pm.test(\"Comment creation was un-successful\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
 									"});\r",
 									"\r",
