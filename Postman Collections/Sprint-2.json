@@ -382,9 +382,10 @@
 									"    pm.response.to.have.status(400);\r",
 									"});\r",
 									"\r",
-									"pm.test(\"Check that correct error messages are recieved - body and issueID are required for comment\", function () {\r",
+									"pm.test(\"Check that correct error messages are recieved - body, issueId and userId are required for comment\", function () {\r",
 									"    pm.expect(jsonData.error.message).to.eql(errorMessage);\r",
-									"    pm.expect(jsonData.error.data.fields.issueID).to.eql(errorBody);\r",
+									"    pm.expect(jsonData.error.data.fields.issueId).to.eql(errorBody);\r",
+									"    pm.expect(jsonData.error.data.fields.userId).to.eql(errorBody);\r",
 									"    pm.expect(jsonData.error.data.fields.body).to.eql(errorBody);\r",
 									"});"
 								],
