@@ -663,7 +663,7 @@
 					"response": []
 				},
 				{
-					"name": "Comment is deleted",
+					"name": "Check that comment is deleted",
 					"event": [
 						{
 							"listen": "test",
