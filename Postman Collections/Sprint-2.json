@@ -1062,12 +1062,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{base_url}}/comments?={{$randomAbbreviation}}",
+							"raw": "{{base_url}}/comments/99999999",
 							"host": [
 								"{{base_url}}"
 							],
 							"path": [
-								"comments"
+								"comments",
+								"99999999"
 							],
 							"query": [
 								{
@@ -1075,11 +1076,6 @@
 									"value": "",
 									"type": "text",
 									"disabled": true
-								},
-								{
-									"key": null,
-									"value": "{{$randomAbbreviation}}",
-									"type": "text"
 								}
 							]
 						}
