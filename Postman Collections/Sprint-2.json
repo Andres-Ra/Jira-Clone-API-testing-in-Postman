@@ -674,7 +674,21 @@
 									"\r",
 									"pm.test(\"Comment was deleted successful\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
-									"});"
+									"});\r",
+									"\r",
+									"pm.test(\"The information is retrieved correctly (commen 3 is deleted)\", function () {\r",
+									"    pm.expect(_isContains(jsonData.issue.comments, \"id\" , pm.globals.get('comment_3_id'))).to.be.false;\r",
+									"    pm.expect(_isContains(jsonData.issue.comments, \"body\" , pm.globals.get('comment_3_text'))).to.be.false;\r",
+									"});\r",
+									"\r",
+									"// The function _isContains checks the value and key name for the each object from the array.\r",
+									"\r",
+									"function _isContains(json, keyname, value) {\r",
+									" return Object.keys(json).some(key => {\r",
+									"        return typeof json[key] === 'object' ? \r",
+									"        _isContains(json[key], keyname, value) : key === keyname && json[key] === value;\r",
+									"    });\r",
+									"}"
 								],
 								"type": "text/javascript"
 							}
@@ -701,7 +715,7 @@
 								}
 							}
 						},
-						"url": "{{base_url}}/comments/{{comment_3_id}}"
+						"url": "{{base_url}}/issues/{{issue_id}}"
 					},
 					"response": []
 				}
