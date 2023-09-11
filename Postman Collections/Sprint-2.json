@@ -984,6 +984,8 @@
 								"id": "1526515b-2c65-451e-aa1f-eb113887f55d",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
+									"const errorMessage = \"Comment not found.\";\r",
+									"const errorCode = \"ENTITY_NOT_FOUND\";\r",
 									"\r",
 									"pm.test(\"Correct status is retrieved (404-Not Found)\", function () {\r",
 									"    pm.response.to.have.status(404);\r",
