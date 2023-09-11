@@ -530,7 +530,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"body\": \"Add comment - missing userId\",\r\n    \"issueId\": {{issue_id}},\r\n    \"userId\": {{$randomBoolean}}\r\n}",
+							"raw": "{\r\n    \"body\": \"Add comment - missing userId\",\r\n    \"issueId\": {{issue_id}}\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
