@@ -582,7 +582,7 @@
 									"const errorCode = \"BAD_USER_INPUT\";\r",
 									"const errorBody = \"This field is required\"\r",
 									"\r",
-									"pm.test(\"Updating comment was unsuccessful\", function () {\r",
+									"pm.test(\"Updating comment was unsuccessful - correct status\", function () {\r",
 									"    pm.response.to.have.status(400);\r",
 									"});\r",
 									"\r",
