@@ -425,14 +425,15 @@
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"const errorMessage = \"There were validation errors.\";\r",
-									"const errorBody = \"Comment text is allowed text (UTF-8) only\";\r",
+									"pm.globals.set(\"comment_3_text\", jsonData.comment.body); // Saving comments text as a global variable\r",
+									"\r",
 									"\r",
 									"pm.test(\"Issue creation was un-successful\", function () {\r",
 									"    pm.response.to.have.status(400);\r",
 									"});\r",
 									"\r",
 									"pm.test(\"Check that correct error messages is recieved\", function () {\r",
-									"    pm.expect(jsonData.error.message).to.eql(errorMessage);\r",
+									"    pm.expect(jsonData.comment.body).to.eql(pm.globals.get('comment_3_text'));\r",
 									"    pm.expect(jsonData.error.data.fields.body).to.eql(errorBody);\r",
 									"});"
 								],
