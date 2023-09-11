@@ -304,7 +304,7 @@
 									"    pm.response.to.have.status(200);\r",
 									"});\r",
 									"\r",
-									"// This will check from the array of the object with the comments id and value from global variable, if both comments are (id and text) available then it will returns true, otherwise returns false.\r",
+									"// This will check from the array of the object with the comments id and value from global variable, if both comments (id and text) are available then it will returns true, otherwise returns false.\r",
 									"\r",
 									"pm.test(\"The information is retrieved correctly (both comments are visible)\", function () {\r",
 									"    pm.expect(_isContains(jsonData.issue.comments, \"id\" , pm.globals.get('comment_1_id'))).to.be.true;\r",
