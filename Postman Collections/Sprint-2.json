@@ -704,7 +704,7 @@
 									"    pm.response.to.have.status(400);\r",
 									"});\r",
 									"\r",
-									"pm.test(\"Check that correct error message is presented\", function () {\r",
+									"pm.test(\"Check that correct error messages are presented\", function () {\r",
 									"    pm.expect(jsonData.error.message).to.eql(errorMessage);\r",
 									"    pm.expect(jsonData.error.code).to.eql(errorCode);\r",
 									"    pm.expect(jsonData.error.data.fields.body).to.eql(errorBody);\r",
