@@ -750,7 +750,7 @@
 					"response": []
 				},
 				{
-					"name": "Update a comment (missing userId)",
+					"name": "Update a comment (non-existing issueId))",
 					"event": [
 						{
 							"listen": "test",
@@ -770,7 +770,7 @@
 									"});\r",
 									"\r",
 									"pm.test(\"Check that userId is required field\", function () {\r",
-									"    pm.expect(jsonData.error.data.fields.userId).to.eql(errorBody);\r",
+									"    pm.expect(jsonData.error.data.fields.issueId).to.eql(errorBody);\r",
 									"});"
 								],
 								"type": "text/javascript"
