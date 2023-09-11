@@ -580,6 +580,7 @@
 									"var jsonData = pm.response.json();\r",
 									"const errorMessage = \"There were validation errors.\";\r",
 									"const errorCode = \"BAD_USER_INPUT\";\r",
+									"const errorBody = \"This field is required\"\r",
 									"\r",
 									"pm.test(\"Updating comment was unsuccessful\", function () {\r",
 									"    pm.response.to.have.status(400);\r",
