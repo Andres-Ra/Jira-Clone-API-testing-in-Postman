@@ -568,6 +568,55 @@
 						"url": "{{base_url}}/comments/{{comment_3_id}}"
 					},
 					"response": []
+				},
+				{
+					"name": "Update comment (non-existing)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1526515b-2c65-451e-aa1f-eb113887f55d",
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"pm.globals.set(\"comment_3_updated\", jsonData.comment.body); // Saving comments text as a global variable\r",
+									"\r",
+									"pm.test(\"Comment creation was successful\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check that information is retrieved correctly\", function () {\r",
+									"    pm.expect(jsonData.comment.id).to.eql(pm.globals.get('comment_3_id'));\r",
+									"    pm.expect(jsonData.comment.body).to.eql(pm.globals.get('comment_3_updated')); //\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "d2880663-2a38-4a52-af5f-c7b5d1a538d0",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsImlhdCI6MTY2MTg4ODg2NSwiZXhwIjoxNjc3NDQwODY1fQ.xBCXkyIvbEe6yW1l079gPqZjt0indGDLBvyUG9n_0es"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"body\": \"Add comment 3 - added update\",\r\n    \"userId\": {{user_id1}},\r\n    \"issueId\": {{issue_id}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/comments/{{comment_3_id}}"
+					},
+					"response": []
 				}
 			],
 			"id": "781e4c8d-639f-40ce-9bd3-248c1d09ed6c"
