@@ -769,7 +769,7 @@
 									"    pm.expect(jsonData.error.message).to.eql(errorMessage);\r",
 									"});\r",
 									"\r",
-									"pm.test(\"Check that userId is required field\", function () {\r",
+									"pm.test(\"Check that issueId is required field\", function () {\r",
 									"    pm.expect(jsonData.error.data.fields.issueId).to.eql(errorBody);\r",
 									"});"
 								],
