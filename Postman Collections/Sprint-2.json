@@ -27,7 +27,7 @@
 							}
 						}
 					],
-					"_postman_id": "59ffa0a4-a7f0-46df-abee-4690241e6558",
+					"id": "59ffa0a4-a7f0-46df-abee-4690241e6558",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -63,7 +63,7 @@
 							}
 						}
 					],
-					"_postman_id": "8728a3f3-ad1b-4a87-ae25-13e7cfe5a49f",
+					"id": "8728a3f3-ad1b-4a87-ae25-13e7cfe5a49f",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -93,7 +93,7 @@
 							}
 						}
 					],
-					"_postman_id": "01dd66f2-a0dc-41bb-b244-9487a1d53df5",
+					"id": "01dd66f2-a0dc-41bb-b244-9487a1d53df5",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -105,7 +105,7 @@
 					"response": []
 				}
 			],
-			"_postman_id": "f53761a5-ff3f-442f-9d1f-06506888e49d",
+			"id": "f53761a5-ff3f-442f-9d1f-06506888e49d",
 			"event": [
 				{
 					"listen": "prerequest",
@@ -165,7 +165,7 @@
 							}
 						}
 					],
-					"_postman_id": "d6c19385-9bdd-4fd3-8df6-30735b5cfe98",
+					"id": "d6c19385-9bdd-4fd3-8df6-30735b5cfe98",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -215,7 +215,7 @@
 							}
 						}
 					],
-					"_postman_id": "0ff37941-283b-4ec5-bd5d-091ecf68e92f",
+					"id": "0ff37941-283b-4ec5-bd5d-091ecf68e92f",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -265,7 +265,7 @@
 							}
 						}
 					],
-					"_postman_id": "9fea11e4-2881-4fa2-8271-2d9613ab2f84",
+					"id": "9fea11e4-2881-4fa2-8271-2d9613ab2f84",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -340,7 +340,7 @@
 							}
 						}
 					],
-					"_postman_id": "d2b76811-cc2b-433e-bda0-d7148bd0cca2",
+					"id": "d2b76811-cc2b-433e-bda0-d7148bd0cca2",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -390,7 +390,7 @@
 							}
 						}
 					],
-					"_postman_id": "00887b4e-3ca8-4d50-9d74-78e8b31cd16e",
+					"id": "00887b4e-3ca8-4d50-9d74-78e8b31cd16e",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -416,7 +416,7 @@
 					"response": []
 				}
 			],
-			"_postman_id": "25c77dae-49cd-462e-8c60-b4d2d3a68f0e"
+			"id": "25c77dae-49cd-462e-8c60-b4d2d3a68f0e"
 		}
 	],
 	"auth": {
