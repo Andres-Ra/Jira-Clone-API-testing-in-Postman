@@ -822,8 +822,8 @@
 									"    pm.expect(jsonData.error.message).to.eql(errorMessage);\r",
 									"});\r",
 									"\r",
-									"pm.test(\"Check that issueId is required field\", function () {\r",
-									"    pm.expect(jsonData.error.data.fields.issueId).to.eql(errorBody);\r",
+									"pm.test(\"Check that userId is required field\", function () {\r",
+									"    pm.expect(jsonData.error.data.fields.userId).to.eql(errorBody);\r",
 									"});"
 								],
 								"type": "text/javascript"
@@ -844,7 +844,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"body\": \"Add comment - missing userId\",\r\n    \"issueId\": {{$randomBitcoin}}\r\n}",
+							"raw": "{\r\n    \"body\": \"Add comment - missing userId\",\r\n    \"userId\": {{$randomBitcoin}}\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
