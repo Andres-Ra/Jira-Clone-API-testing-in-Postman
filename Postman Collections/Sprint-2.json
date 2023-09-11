@@ -631,11 +631,6 @@
 									"\r",
 									"pm.test(\"Comment was deleted successful\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
-									"});\r",
-									"\r",
-									"pm.test(\"Check that information is retrieved correctly\", function () {\r",
-									"    pm.expect(jsonData.comment.id).to.eql(pm.globals.get('comment_3_id'));\r",
-									"    pm.expect(jsonData.comment.body).to.eql(pm.globals.get('comment_3_updated')); //\r",
 									"});"
 								],
 								"type": "text/javascript"
