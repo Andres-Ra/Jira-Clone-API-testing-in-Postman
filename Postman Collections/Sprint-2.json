@@ -578,15 +578,16 @@
 								"id": "1526515b-2c65-451e-aa1f-eb113887f55d",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
-									"pm.globals.set(\"comment_3_updated\", jsonData.comment.body); // Saving comments text as a global variable\r",
+									"const errorMessage = \"Comment not found.\";\r",
+									"const errorCode = \"ENTITY_NOT_FOUND\";\r",
 									"\r",
-									"pm.test(\"Comment creation was successful\", function () {\r",
-									"    pm.response.to.have.status(200);\r",
+									"pm.test(\"Updating comment was unsuccessful\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
 									"});\r",
 									"\r",
 									"pm.test(\"Check that information is retrieved correctly\", function () {\r",
-									"    pm.expect(jsonData.comment.id).to.eql(pm.globals.get('comment_3_id'));\r",
-									"    pm.expect(jsonData.comment.body).to.eql(pm.globals.get('comment_3_updated')); //\r",
+									"    pm.expect(jsonData.error.message).to.eql(errorMessage));\r",
+									"    pm.expect(jsonData.error.code).to.eql(errorCode); //\r",
 									"});"
 								],
 								"type": "text/javascript"
