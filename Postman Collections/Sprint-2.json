@@ -750,7 +750,7 @@
 					"response": []
 				},
 				{
-					"name": "Update a comment (missing userId)",
+					"name": "Update a comment (non-existing issueId))",
 					"event": [
 						{
 							"listen": "test",
