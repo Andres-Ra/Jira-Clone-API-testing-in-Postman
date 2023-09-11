@@ -1061,7 +1061,23 @@
 								}
 							}
 						},
-						"url": "{{base_url}}/comments/{{comment_4_id}}"
+						"url": {
+							"raw": "{{base_url}}/comments/?={{$randomAlphaNumeric}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"comments",
+								""
+							],
+							"query": [
+								{
+									"key": null,
+									"value": "{{$randomAlphaNumeric}}",
+									"type": "text"
+								}
+							]
+						}
 					},
 					"response": []
 				}
