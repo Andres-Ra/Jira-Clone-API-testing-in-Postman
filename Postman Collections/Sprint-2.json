@@ -582,7 +582,7 @@
 									"const errorCode = \"BAD_USER_INPUT\";\r",
 									"\r",
 									"pm.test(\"Updating comment was unsuccessful\", function () {\r",
-									"    pm.response.to.have.status(404);\r",
+									"    pm.response.to.have.status(400);\r",
 									"});\r",
 									"\r",
 									"pm.test(\"Check that correct error message is presented\", function () {\r",
