@@ -676,7 +676,7 @@
 									"const errorMessage = \"Comment not found.\";\r",
 									"const errorCode = \"ENTITY_NOT_FOUND\";\r",
 									"\r",
-									"pm.test(\"Updating comment was unsuccessful\", function () {\r",
+									"pm.test(\"Updating comment was unsuccessful - correct status\", function () {\r",
 									"    pm.response.to.have.status(404);\r",
 									"});\r",
 									"\r",
