@@ -844,14 +844,14 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"body\": \"Add comment - missing userId\",\r\n    \"userId\": {{$randomBitcoin}}\r\n}",
+							"raw": "{\r\n    \"body\": \"Add comment - non-existing userId\",\r\n    \"userId\": {{$randomBitcoin}}\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "{{base_url}}/comments/{{comment_3_id}}"
+						"url": "{{base_url}}/comments/1608746"
 					},
 					"response": []
 				},
