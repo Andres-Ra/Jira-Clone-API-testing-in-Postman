@@ -1019,6 +1019,51 @@
 						"url": "{{base_url}}/comments/{{comment_4_id}}"
 					},
 					"response": []
+				},
+				{
+					"name": "Delete comment (random comment_id)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1526515b-2c65-451e-aa1f-eb113887f55d",
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"const errorMessage = \"Comment not found.\";\r",
+									"const errorCode = \"ENTITY_NOT_FOUND\";\r",
+									"\r",
+									"pm.test(\"Correct status is retrieved (404-Not Found)\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "1a8074cb-0d83-4819-9824-62b84cd7399e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsImlhdCI6MTY2MTg4ODg2NSwiZXhwIjoxNjc3NDQwODY1fQ.xBCXkyIvbEe6yW1l079gPqZjt0indGDLBvyUG9n_0es"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/comments/{{comment_4_id}}"
+					},
+					"response": []
 				}
 			],
 			"id": "52d4c05a-4842-493b-9d64-6febad9367d0"
