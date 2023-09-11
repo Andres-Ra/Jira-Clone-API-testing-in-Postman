@@ -1021,7 +1021,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete comment (random comment_id)",
+					"name": "Delete comment (random id))",
 					"event": [
 						{
 							"listen": "test",
