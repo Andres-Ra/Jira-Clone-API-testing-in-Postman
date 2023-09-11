@@ -678,7 +678,7 @@
 									"\r",
 									"pm.test(\"The information is retrieved correctly (comment 3 is deleted)\", function () {\r",
 									"    pm.expect(_isContains(jsonData.issue.comments, \"id\" , pm.globals.get('comment_3_id'))).not.to.be.true;\r",
-									"    pm.expect(_isContains(jsonData.issue.comments, \"body\" , pm.globals.get('comment_3_text'))).not.to.contain;\r",
+									"    pm.expect(_isContains(jsonData.issue.comments, \"body\" , pm.globals.get('comment_3_text'))).not.to.be.true;\r",
 									"});\r",
 									"\r",
 									"// The function _isContains checks the value and key name for the each object from the array.\r",
