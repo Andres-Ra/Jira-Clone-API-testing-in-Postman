@@ -1336,7 +1336,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "1a910a68-d914-40b7-a1b7-e1e3c8881819",
+				"id": "d0d4a269-3141-40a0-a258-a32107d7d5cb",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -1346,12 +1346,20 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "cdcdcb05-fdca-40cf-9228-3954119f0578",
+				"id": "fb78a18f-f34c-4b8a-9801-d4b539a80c02",
 				"type": "text/javascript",
 				"exec": [
 					""
 				]
 			}
+		}
+	],
+	"variable": [
+		{
+			"id": "c40fc67d-3c26-4245-ba54-295fe10db82f",
+			"key": "base_url",
+			"value": "https://jira-api.ivorreic.com",
+			"type": "string"
 		}
 	]
 }
