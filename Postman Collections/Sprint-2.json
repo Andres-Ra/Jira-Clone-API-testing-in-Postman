@@ -425,7 +425,7 @@
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"const errorMessage = \"There were validation errors.\";\r",
-									"const errorBody = \"This field is required\";\r",
+									"const errorBody = \"Comment text is allowed text (UTF-8) only\";\r",
 									"\r",
 									"pm.test(\"Issue creation was un-successful\", function () {\r",
 									"    pm.response.to.have.status(400);\r",
@@ -434,7 +434,6 @@
 									"pm.test(\"Check that correct error messages is recieved\", function () {\r",
 									"    pm.expect(jsonData.error.message).to.eql(errorMessage);\r",
 									"    pm.expect(jsonData.error.data.fields.body).to.eql(errorBody);\r",
-									"    pm.expect(jsonData.error.data.fields.issueId).to.eql(errorBody);\r",
 									"});"
 								],
 								"type": "text/javascript"
@@ -455,7 +454,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"body\": '{{$randomCurrencySymbol}}',\r\n    \"userId\": {{user_id1}},\r\n    \"issueId\": {{issue_id}}\r\n}",
+							"raw": "{\r\n    \"body\": \"{{$randomCurrencySymbol}}{{$randomCurrencySymbol}}#¤%&@£$€€€!@#$%&*()^_+=`~Привет Мир!\",\r\n    \"userId\": {{user_id1}},\r\n    \"issueId\": {{issue_id}}\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
