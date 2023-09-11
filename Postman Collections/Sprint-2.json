@@ -480,16 +480,16 @@
 								"id": "1526515b-2c65-451e-aa1f-eb113887f55d",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
-									"pm.globals.set(\"comment_2_text\", jsonData.comment.body); // Saving comments text as a global variable\r",
-									"pm.globals.set(\"comment_2_id\", jsonData.comment.id); // Saving comments id as a global variable\r",
+									"pm.globals.set(\"comment_3_text\", jsonData.comment.body); // Saving comments text as a global variable\r",
+									"pm.globals.set(\"comment_3_id\", jsonData.comment.id); // Saving comments id as a global variable\r",
 									"\r",
-									"pm.test(\"Issue creation was successful\", function () {\r",
+									"pm.test(\"Comment creation was successful\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
 									"});\r",
 									"\r",
 									"pm.test(\"Check that information is retrieved correctly\", function () {\r",
-									"    pm.expect(jsonData.comment.id).to.eql(pm.globals.get('comment_2_id'));\r",
-									"    pm.expect(jsonData.comment.body).to.eql(pm.globals.get('comment_2_text')); //\r",
+									"    pm.expect(jsonData.comment.id).to.eql(pm.globals.get('comment_3_id'));\r",
+									"    pm.expect(jsonData.comment.body).to.eql(pm.globals.get('comment_3_text')); //\r",
 									"});"
 								],
 								"type": "text/javascript"
@@ -510,7 +510,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"body\": \"Add comment 2\",\r\n    \"userId\": {{user_id1}},\r\n    \"issueId\": {{issue_id}}\r\n}",
+							"raw": "{\r\n    \"body\": \"Add comment 3 - updated later\",\r\n    \"userId\": {{user_id1}},\r\n    \"issueId\": {{issue_id}}\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
