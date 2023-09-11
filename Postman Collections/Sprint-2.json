@@ -415,6 +415,57 @@
 						"url": "{{base_url}}/comments"
 					},
 					"response": []
+				},
+				{
+					"name": "Add a comment (random characters)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1526515b-2c65-451e-aa1f-eb113887f55d",
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"const errorMessage = \"There were validation errors.\";\r",
+									"const errorBody = \"This field is required\";\r",
+									"\r",
+									"pm.test(\"Issue creation was un-successful\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check that correct error messages is recieved\", function () {\r",
+									"    pm.expect(jsonData.error.message).to.eql(errorMessage);\r",
+									"    pm.expect(jsonData.error.data.fields.body).to.eql(errorBody);\r",
+									"    pm.expect(jsonData.error.data.fields.issueId).to.eql(errorBody);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "63b8d42d-1fed-4b3d-8cd0-6344802a67ee",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsImlhdCI6MTY2MTg4ODg2NSwiZXhwIjoxNjc3NDQwODY1fQ.xBCXkyIvbEe6yW1l079gPqZjt0indGDLBvyUG9n_0es"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/comments"
+					},
+					"response": []
 				}
 			],
 			"id": "25c77dae-49cd-462e-8c60-b4d2d3a68f0e"
