@@ -471,7 +471,7 @@
 			"name": "Update Comments",
 			"item": [
 				{
-					"name": "Add a comment 3",
+					"name": "Add a comment (prerequisite)",
 					"event": [
 						{
 							"listen": "test",
