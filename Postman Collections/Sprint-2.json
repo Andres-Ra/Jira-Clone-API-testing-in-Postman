@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "f94a71d7-8d62-498d-be2b-8682fe29f47c",
 		"name": "AndresRaev_jira_clone_comments",
-		"description": "Run Authentication folder before any other folder in order the tests to run and work correctly.\n\nAuth. folder gets auth. token; project id; user_id and creates an issue.",
+		"description": "Run Authentication folder before any other folder in order the tests to run and work correctly.\n\nAuth. folder gets auth. token; project id; user_id into global variables and creates an issue.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
