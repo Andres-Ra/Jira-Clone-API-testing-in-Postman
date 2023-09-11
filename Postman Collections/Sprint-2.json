@@ -1021,7 +1021,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete comment (random 10-digit id))",
+					"name": "Delete comment (non-existing 10-digit id))",
 					"event": [
 						{
 							"listen": "test",
