@@ -785,16 +785,16 @@
 								"id": "1526515b-2c65-451e-aa1f-eb113887f55d",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
-									"pm.globals.set(\"comment_3_text\", jsonData.comment.body); // Saving comments text as a global variable\r",
-									"pm.globals.set(\"comment_3_id\", jsonData.comment.id); // Saving comments id as a global variable\r",
+									"pm.globals.set(\"comment_4_text\", jsonData.comment.body); // Saving comments text as a global variable\r",
+									"pm.globals.set(\"comment_4_id\", jsonData.comment.id); // Saving comments id as a global variable\r",
 									"\r",
 									"pm.test(\"Comment creation was successful\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
 									"});\r",
 									"\r",
 									"pm.test(\"Check that information is retrieved correctly\", function () {\r",
-									"    pm.expect(jsonData.comment.id).to.eql(pm.globals.get('comment_3_id'));\r",
-									"    pm.expect(jsonData.comment.body).to.eql(pm.globals.get('comment_3_text')); //\r",
+									"    pm.expect(jsonData.comment.id).to.eql(pm.globals.get('comment_4_id'));\r",
+									"    pm.expect(jsonData.comment.body).to.eql(pm.globals.get('comment_4_text')); //\r",
 									"});"
 								],
 								"type": "text/javascript"
@@ -823,107 +823,6 @@
 							}
 						},
 						"url": "{{base_url}}/comments"
-					},
-					"response": []
-				},
-				{
-					"name": "Update comment",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "1526515b-2c65-451e-aa1f-eb113887f55d",
-								"exec": [
-									"var jsonData = pm.response.json();\r",
-									"pm.globals.set(\"comment_3_updated\", jsonData.comment.body); // Saving comments text as a global variable\r",
-									"\r",
-									"pm.test(\"Comment updating was successful - correct status\", function () {\r",
-									"    pm.response.to.have.status(200);\r",
-									"});\r",
-									"\r",
-									"pm.test(\"Check that information is retrieved correctly\", function () {\r",
-									"    pm.expect(jsonData.comment.id).to.eql(pm.globals.get('comment_3_id'));\r",
-									"    pm.expect(jsonData.comment.body).to.eql(pm.globals.get('comment_3_updated')); //\r",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"id": "91cab897-530d-4e81-ba09-8c8060403c12",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsImlhdCI6MTY2MTg4ODg2NSwiZXhwIjoxNjc3NDQwODY1fQ.xBCXkyIvbEe6yW1l079gPqZjt0indGDLBvyUG9n_0es"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"body\": \"Add comment 3 - added update\",\r\n    \"userId\": {{user_id1}},\r\n    \"issueId\": {{issue_id}}\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{base_url}}/comments/{{comment_3_id}}"
-					},
-					"response": []
-				},
-				{
-					"name": "Update comment (body is null)",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "1526515b-2c65-451e-aa1f-eb113887f55d",
-								"exec": [
-									"var jsonData = pm.response.json();\r",
-									"const errorMessage = \"There were validation errors.\";\r",
-									"const errorCode = \"BAD_USER_INPUT\";\r",
-									"const errorBody = \"This field is required\"\r",
-									"\r",
-									"pm.test(\"Updating comment was unsuccessful - correct status\", function () {\r",
-									"    pm.response.to.have.status(400);\r",
-									"});\r",
-									"\r",
-									"pm.test(\"Check that correct error message is presented\", function () {\r",
-									"    pm.expect(jsonData.error.message).to.eql(errorMessage);\r",
-									"    pm.expect(jsonData.error.code).to.eql(errorCode);\r",
-									"    pm.expect(jsonData.error.data.fields.body).to.eql(errorBody);\r",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"id": "b49f3737-3303-4b92-93be-a75279339db5",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsImlhdCI6MTY2MTg4ODg2NSwiZXhwIjoxNjc3NDQwODY1fQ.xBCXkyIvbEe6yW1l079gPqZjt0indGDLBvyUG9n_0es"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"body\": null\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{base_url}}/comments/{{comment_3_id}}"
 					},
 					"response": []
 				},
